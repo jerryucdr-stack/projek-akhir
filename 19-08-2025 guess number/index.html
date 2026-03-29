@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>19 Agustus 2025</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h2>Guess Number</h2>
+    <input type="number" id="angka">
+    <button onclick="refresh()" id="">Refresh</button><br>
+    <button onclick="tebak()" id="tebak">Guess</button>
+    <p>Result : <br><span id="hasil"></span></p>
+    
+    
+
+    <script>
+       
+        let komputer = Math.floor(Math.random()*10)+1;
+        function tebak(){
+             let angka = parseFloat (document.getElementById("angka").value);
+
+              if(komputer === angka){
+            
+            document.getElementById('hasil').innerHTML = `kamu berhasil menebak angkanya : ${komputer} `
+            document.getElementById('tebak').disabled = true
+        }else if(komputer < angka ){
+            
+            document.getElementById('hasil').innerHTML = `angka yang di tebak terlalu besar`
+            document.getElementById('tebak').disabled = true
+        }else{
+            document.getElementById('hasil').innerHTML = `angka yang di tebak terlalu kecil`
+            document.getElementById('tebak').disabled = true
+            
+            
+        }
+
+        }
+        
+       
+
+
+
+
+
+
+
+
+
+        
+        
+    </script>
+</body>
+</html>

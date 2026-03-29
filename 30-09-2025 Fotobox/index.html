@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>30-09-2025</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    
+
+    <div class="bungkus">
+        <nav>
+    <h2>Fotobox Free Use by Ryu</h2>
+    </nav>
+<div class="bungkus1">
+<div class="bungkus2">
+<div class="smile">
+    <h3>Smile for the camera/Chessee</h3>
+</div>
+    <div class="camerakiri">
+        
+        <video src="" id="video" autoplay></video>
+        
+
+        <button id="snap">Take Foto</button>
+</div>
+</div>
+    <div class="bungkus3">
+        <div class="bungkus4">
+        <div class="img">
+        <canvas id="canvas" style="display: none;"></canvas>
+        <div class="foto" id="photos">
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+            
+        
+
+
+    <script>
+        const video = document.getElementById('video');
+        const snapButton = document.getElementById('snap');
+        const canvas = document.getElementById('canvas');
+        const photosDiv = document.getElementById('photos')
+        const context = canvas.getContext('2d');    
+
+        navigator.mediaDevices.getUserMedia({video : true})
+            .then(stream =>{
+                video.srcObject = stream;
+            })
+            .catch(err =>{
+                console.log('tidak bisa akses kamera', err)
+            })
+
+            snapButton.addEventListener('click',()=> {
+                context.drawImage(video, 0, 0, canvas.width, canvas.height);
+                const imgData = canvas.toDataURL('image/png');
+                const img = document.createElement('img');
+                img.src = imgData;
+                photosDiv.appendChild(img);
+            });
+            canvas.width = 213;
+            canvas.height = 200;
+            
+    </script>
+</body>
+</html>

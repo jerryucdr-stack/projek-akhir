@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brooklyn | Complete Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        /* --- CSS VARIABLES & RESET --- */
+        
+    /* --- CSS VARIABLES & RESET --- */
+    :root {
+        --primary-color: #9b51e0; 
+        --primary-hover: #7b3ebd;
+        --bg-light: #fdfdfd;
+        --bg-gray: #f8f9fc;
+        --text-dark: #2d2d32;
+        --text-muted: #6c6c72;
+        --white: #ffffff;
+        --border-radius: 12px;
+        --transition: all 0.3s ease;
+    }
+
+    * { 
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box; /* Perbaikan: Nilai ditambahkan */
+        font-family: 'Poppins', sans-serif; 
+        scroll-behavior: smooth; 
+    }
+
+    body { background-color: var(--white); color: var(--text-dark); line-height: 1.6; overflow-x: hidden; }
+    a { text-decoration: none; color: inherit; }
+    ul { list-style: none; }
+    img { max-width: 100%; height: auto; display: block; border-radius: var(--border-radius); }
+
+    /* --- REUSABLE COMPONENTS --- */
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+    section { padding: 100px 0; }
+    .bg-gray { background-color: var(--bg-gray); }
+    
+    .btn { display: inline-block; padding: 12px 28px; border-radius: 8px; font-weight: 500; cursor: pointer; border: none; transition: var(--transition); font-size: 1rem; }
+    .btn-primary { background-color: var(--primary-color); color: var(--white); }
+    .btn-primary:hover { background-color: var(--primary-hover); }
+    .btn-outline { background-color: transparent; color: var(--text-dark); border: 1px solid #ddd; }
+    .btn-outline:hover { background-color: var(--primary-color); color: var(--white); border-color: var(--primary-color); }
+    
+    .section-title { font-size: 2.5rem; font-weight: 700; margin-bottom: 15px; text-align: center; }
+    .section-subtitle { text-align: center; color: var(--text-muted); margin-bottom: 50px; max-width: 600px; margin-left: auto; margin-right: auto; }
+    
+    /* Perbaikan: Placeholder-img tidak lagi merusak ukuran gambar */
+    .placeholder-img { 
+        border-radius: var(--border-radius); 
+        overflow: hidden;
+        background: #eee;
+    }
+
+    /* --- NAVIGATION --- */
+    header { position: fixed; top: 0; width: 100%; background-color: var(--white); box-shadow: 0 2px 10px rgba(0,0,0,0.05); z-index: 1000; }
+    nav { display: flex; justify-content: space-between; align-items: center; height: 80px; }
+    .logo { font-size: 1.5rem; font-weight: 700; display: flex; align-items: center; gap: 10px; }
+    .logo span { background-color: var(--primary-color); color: var(--white); width: 35px; height: 35px; display: flex; justify-content: center; align-items: center; border-radius: 50%; font-size: 1.2rem; }
+    .nav-links { display: flex; gap: 25px; align-items: center; }
+    .nav-links a { font-weight: 500; font-size: 0.95rem; transition: var(--transition); }
+    .nav-links a:hover, .nav-links a.active { color: var(--primary-color); }
+
+    /* --- HERO SECTION --- */
+    #home { padding-top: 150px; padding-bottom: 50px; }
+    .hero-content { display: flex; align-items: center; justify-content: space-between; gap: 50px; }
+    .hero-text { flex: 1; }
+    .hero-text h1 { font-size: 3.5rem; line-height: 1.2; margin-bottom: 20px; }
+    .hero-text p { color: var(--text-muted); margin-bottom: 30px; font-size: 1.1rem; max-width: 500px; }
+    
+    /* Perbaikan: Ukuran hero-image dibuat fleksibel dan proporsional */
+    .hero-image { flex: 1; display: flex; justify-content: flex-end; }
+    .hero-image .placeholder-img { 
+    width: 320px; /* Ukuran lebar diperkecil dari sebelumnya */
+    height: 320px; /* Dibuat persegi agar lebih rapi */
+    border-radius: 5%; /* Opsional: ubah ke 20px jika ingin kotak melengkung */
+    overflow: hidden;
+    border: 8px solid #faf5ff; /* Memberi kesan frame yang bersih */
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+    .hero-image img { width: 100%; height: 100%; object-fit: cover; }
+    
+    .hero-stats { display: flex; justify-content: space-between; background-color: #faf5ff; padding: 30px 50px; border-radius: var(--border-radius); margin: 60px auto 0; max-width: 800px; }
+    .stat-item { text-align: center; }
+    .stat-item h3 { font-size: 2rem; color: var(--text-dark); }
+    .stat-item p { color: var(--text-muted); font-size: 0.9rem; }
+
+    /* --- ABOUT SECTION --- */
+    .about-content { display: flex; align-items: center; gap: 60px; background: var(--white); padding: 50px; border-radius: var(--border-radius); box-shadow: 0 10px 40px rgba(0,0,0,0.03); }
+    .about-image { flex: 0.8; }
+    /* Perbaikan: Ukuran foto di about dibenarkan */
+    .about-image .placeholder-img img { width: 100%; height: 100%z; max-height: 500px; object-fit: cover; }
+    .social-icons { display: flex; gap: 15px; justify-content: center; margin-top: 20px; }
+    .social-icons a { color: var(--text-dark); font-size: 1.2rem; transition: var(--transition); }
+    .social-icons a:hover { color: var(--primary-color); }
+    
+    .about-text { flex: 1.2; }
+    .about-text h2 { font-size: 2rem; margin-bottom: 20px; }
+    .about-text p { color: var(--text-muted); margin-bottom: 15px; }
+    .about-btns { display: flex; gap: 15px; margin-top: 30px; }
+
+    /* --- PORTFOLIO & OTHERS --- */
+    .portfolio-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-bottom: 50px; }
+    .portfolio-card { background: var(--white); border-radius: var(--border-radius); overflow: hidden; box-shadow: 0 5px 20px rgba(0,0,0,0.03); transition: var(--transition); }
+    .portfolio-img { height: 220px; width: 100%; overflow: hidden; }
+    .portfolio-img img { width: 100%; height: 100%; object-fit: cover; }
+
+    /* ... sisa CSS proses, blog, services sama seperti sebelumnya ... */
+
+    /* --- MEDIA QUERY UNTUK IPHONE SE (375px) ---
+    @media (max-width: 768px) {
+        section { padding: 60px 0; }
+        .nav-links { display: none; } /* Sederhanakan untuk mobile */
+/*         
+        .hero-content { flex-direction: column; text-align: center; }
+        .hero-text h1 { font-size: 2.2rem; }
+        .hero-image { justify-content: center; order: -1; } /* Foto di atas teks pada mobile */
+        
+        /* .about-content { flex-direction: column; padding: 20px; }
+        .hero-stats { flex-direction: column; gap: 20px; padding: 20px; }
+        
+        .portfolio-grid { grid-template-columns: 1fr; }
+    } */ 
+
+        
+        .process-grid { flex: 1.5; display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        .process-card { background: var(--white); padding: 30px; border-radius: var(--border-radius); box-shadow: 0 5px 20px rgba(0,0,0,0.03); }
+        .process-card i { background: #faf5ff; color: var(--primary-color); width: 50px; height: 50px; display: flex; align-items: center; justify-content: center; border-radius: 8px; font-size: 1.5rem; margin-bottom: 20px; }
+        .process-card h4 { font-size: 1.2rem; margin-bottom: 10px; }
+        .process-card p { color: var(--text-muted); font-size: 0.9rem; }
+
+        /* --- PORTFOLIO --- */
+        .portfolio-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-bottom: 50px; }
+        .portfolio-card { background: var(--white); border-radius: var(--border-radius); overflow: hidden; box-shadow: 0 5px 20px rgba(0,0,0,0.03); transition: var(--transition); }
+        .portfolio-card:hover { transform: translateY(-10px); }
+        .portfolio-img { height: 220px; width: 100%; }
+        .portfolio-info { padding: 25px; }
+        .portfolio-info span { font-size: 0.8rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; }
+        .portfolio-info h4 { font-size: 1.2rem; margin: 10px 0; }
+        .portfolio-info p { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 20px; }
+        .portfolio-info a { color: var(--text-dark); font-weight: 600; display: flex; align-items: center; gap: 10px; }
+        .portfolio-info a:hover { color: var(--primary-color); }
+        
+        .cta-banner { background: #1a1a24; color: var(--white); padding: 60px; border-radius: var(--border-radius); text-align: center; margin-top: 50px; }
+        .cta-banner h2 { font-size: 2.5rem; margin-bottom: 15px; }
+        .cta-banner p { color: #aaa; margin-bottom: 30px; font-size: 1.1rem; }
+
+        /* --- BLOG --- */
+        .blog-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
+        .blog-card { background: var(--white); border-radius: var(--border-radius); overflow: hidden; box-shadow: 0 5px 20px rgba(0,0,0,0.03); }
+        .blog-img { height: 200px; width: 100%; }
+        .blog-info { padding: 25px; }
+        .blog-info .meta { font-size: 0.8rem; color: var(--text-muted); margin-bottom: 10px; }
+        .blog-info h4 { font-size: 1.1rem; line-height: 1.4; transition: var(--transition); cursor: pointer; }
+        .blog-info h4:hover { color: var(--primary-color); }
+
+        /* --- WHAT I DO (SERVICES) --- */
+        .services-content { display: flex; gap: 50px; }
+        .services-text { flex: 1; }
+        .services-text h2 { font-size: 2.5rem; margin-bottom: 20px; }
+        .services-text p { color: var(--text-muted); margin-bottom: 30px; }
+        
+        .services-list { flex: 1.5; display: flex; flex-direction: column; gap: 20px; }
+        .service-item { background: var(--white); padding: 30px; border-radius: var(--border-radius); box-shadow: 0 5px 20px rgba(0,0,0,0.03); border-left: 4px solid transparent; transition: var(--transition); }
+        .service-item:hover { border-left-color: var(--primary-color); transform: translateX(5px); }
+        .service-item h4 { font-size: 1.3rem; margin-bottom: 10px; }
+        .service-item p { color: var(--text-muted); font-size: 0.95rem; }
+
+        /* --- HAPPY CLIENTS --- */
+        .clients-section { text-align: center; padding: 60px 0; }
+        .clients-section h2 { margin-bottom: 40px; }
+        .clients-logos { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 30px; opacity: 0.6; }
+        .clients-logos span { font-size: 1.5rem; font-weight: bold; color: #555; }
+
+        /* --- TESTIMONIAL --- */
+        .testimonial-section { text-align: center; max-width: 800px; margin: 0 auto; padding: 80px 20px; }
+        .testimonial-section h2 { font-size: 2rem; margin-bottom: 30px; }
+        .testimonial-section p.quote { font-size: 1.2rem; font-style: italic; color: var(--text-muted); margin-bottom: 30px; }
+        .testimonial-author h5 { font-size: 1.1rem; color: var(--text-dark); }
+        .testimonial-author span { font-size: 0.9rem; color: var(--text-muted); }
+
+        /* --- CONTACT --- */
+        .contact-container { display: flex; gap: 50px; background: var(--white); padding: 50px; border-radius: var(--border-radius); box-shadow: 0 10px 40px rgba(0,0,0,0.05); }
+        .contact-info { flex: 1; }
+        .contact-info h2 { font-size: 2rem; margin-bottom: 20px; }
+        .contact-info > p { color: var(--text-muted); margin-bottom: 40px; }
+        .info-item { display: flex; align-items: center; gap: 15px; margin-bottom: 20px; }
+        .info-item i { color: var(--primary-color); font-size: 1.2rem; background: #faf5ff; padding: 15px; border-radius: 50%; }
+        
+        .contact-form { flex: 1.5; display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        .input-group { display: flex; flex-direction: column; }
+        .input-group.full-width { grid-column: span 2; }
+        .input-group label { font-size: 0.9rem; margin-bottom: 8px; color: var(--text-dark); }
+        .input-group input, .input-group textarea { padding: 12px 15px; border: 1px solid #ddd; border-radius: 8px; outline: none; transition: var(--transition); background: var(--bg-gray); }
+        .input-group input:focus, .input-group textarea:focus { border-color: var(--primary-color); background: var(--white); }
+        .input-group textarea { height: 120px; resize: none; }
+
+        /* SCROLL TO TOP */
+        #scrollTopBtn { position: fixed; bottom: 30px; right: 30px; background: var(--primary-color); color: var(--white); width: 50px; height: 50px; border-radius: 50%; display: none; justify-content: center; align-items: center; border: none; cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.2); z-index: 999; }
+        #scrollTopBtn:hover { transform: scale(1.1); }
+
+
+        /* =========================================
+           RESPONSIVE MOBILE (iPhone SE - 375px) 
+           ========================================= */
+        @media (max-width: 677px) {
+
+            
+    .hero-image .placeholder-img {
+        width: 220px; /* Lebih kecil lagi di tampilan mobile */
+        height: 220px;
+        margin: 0 auto 30px; /* Ketengah dan beri jarak ke teks di bawahnya */
+    }
+
+            /* General Space Tuning */
+            section { padding: 60px 0; }
+            .section-title { font-size: 2rem; }
+
+            
+            
+            /* Navigation */
+            nav { flex-direction: column; height: auto; padding: 15px 0; gap: 15px; }
+            .nav-links { 
+                width: 100%; 
+                overflow-x: auto; /* Scrollable horizontal nav */
+                white-space: nowrap; 
+                justify-content: flex-start; 
+                padding-bottom: 10px; 
+            }
+            .nav-links::-webkit-scrollbar { height: 4px; }
+            .nav-links::-webkit-scrollbar-thumb { background: #ddd; border-radius: 4px; }
+            #home { padding-top: 130px; }
+
+            /* Hero */
+            .hero-content { flex-direction: column-reverse; text-align: center; gap: 30px; }
+            .hero-text h1 { font-size: 2.2rem; }
+            .hero-text p { font-size: 0.95rem; margin: 0 auto 30px auto; }
+            .hero-image { justify-content: center; }
+            .hero-stats { flex-direction: column; gap: 20px; padding: 20px; margin-top: 30px; }
+
+            /* Alignments to Center for Flex Content */
+            .about-content, .process-content, .services-content, .contact-container {
+                flex-direction: column; text-align: center; gap: 30px; padding: 30px 20px;
+            }
+            
+            .about-btns, .social-icons { justify-content: center !important; }
+            .about-btns { flex-direction: column; }
+            
+            .process-card i { margin: 0 auto 20px auto; } /* Center icon */
+
+            /* Grid to Single Column */
+            .process-grid, .portfolio-grid, .blog-grid, .contact-form {
+                grid-template-columns: 1fr;
+            }
+
+            /* Contact Items */
+            .info-item { flex-direction: column; gap: 5px; }
+            .input-group.full-width { grid-column: span 1; }
+            
+            /* Clients & CTA */
+            .clients-logos { justify-content: center; gap: 20px; }
+            .cta-banner { padding: 40px 20px; }
+            .cta-banner h2 { font-size: 1.8rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav class="container">
+            <div class="logo"><span>J</span> Ryu</div>
+            <ul class="nav-links">
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#process">Process</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#blog">Blog</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><button class="btn btn-primary interactive-btn" data-action="Navigating to Contact Page!">Contact</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Hello, It's<br>Ryu Athallah</h1>
+                    <p>I'm a Freelance UI/UX Designer and Developer based in London, England. I strive to build immersive and beautiful web applications through carefully crafted code and user-centric design.</p>
+                    <button class="btn btn-primary interactive-btn" data-action="Opening Greeting / Email draft...">Say Hello!</button>
+                </div>
+                <div class="hero-image">
+                    <div class="placeholder-img"><img src="fotoguahahayuk.jpeg" alt=""></div>
+                </div>
+            </div>
+            <div class="hero-stats">
+                <div class="stat-item"><h3>2</h3><p>Experience</p></div>
+                <div class="stat-item"><h3>1+</h3><p>Projects Completed</p></div>
+                <div class="stat-item"><h3>1+</h3><p>Happy Clients</p></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="bg-gray">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-image">
+                    <div class="placeholder-img"><img src="foto.jpg" alt=""></div>
+                    <div class="social-icons"></div>
+                </div>
+                <div class="about-text">
+                    <h2>I am Professional User Experience Designer</h2>
+                    <p>I design and develop services for customers specializing in creating stylish, modern websites, web services and online stores. My passion is to design digital user experiences.</p>
+                    <p>I design and develop services for customers specializing in creating stylish, modern websites, web services.</p>
+                    <div class="about-btns">
+                        <button class="btn btn-primary interactive-btn" data-action="Scrolling to Projects...">My Projects</button>
+                        <button class="btn btn-outline interactive-btn" data-action="Downloading CV (Brooklyn_Gilbert_CV.pdf)..."><i class="fas fa-download"></i> Download CV</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="process">
+        <div class="container">
+            <div class="process-content">
+                <div class="process-text">
+                    <h2>Work Process</h2>
+                    <p>Driven by design and powered by code, I create digital interfaces that feel intuitive and perform seamlessly. Every layout, animation, and component is crafted with intention - merging usability with visual clarity.</p>
+                    <p>I blend clean design with efficient code to build engaging, user-friendly web experiences that stand out.</p>
+                </div>
+                <div class="process-grid">
+                    <div class="process-card">
+                        <i class="fas fa-file-alt"></i>
+                        <h4>1. Research</h4>
+                        <p>Design meets function in every pixel, blending clarity with intuitive motion.</p>
+                    </div>
+                    <div class="process-card">
+                        <i class="fas fa-chart-line"></i>
+                        <h4>2. Analyze</h4>
+                        <p>Crafting clean, thoughtful interfaces where form flows seamlessly into function.</p>
+                    </div>
+                    <div class="process-card">
+                        <i class="fas fa-pen-nib"></i>
+                        <h4>3. Design</h4>
+                        <p>I design seamless digital experiences with precision, purpose, and a touch of elegance.</p>
+                    </div>
+                    <div class="process-card">
+                        <i class="fas fa-rocket"></i>
+                        <h4>4. Launch</h4>
+                        <p>I craft digital products where thoughtful design meets performance-driven development.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="portfolio" class="bg-gray">
+        <div class="container">
+            <h2 class="section-title">Portfolio</h2>
+            <p class="section-subtitle">Here's a selection of my recent work, showcasing my skills in creating user-centric and visually appealing interfaces.</p>
+            
+            <div class="portfolio-grid">
+                <div class="portfolio-card">
+                    <div class="portfolio-img placeholder-img"><img src="Add nilai siswa.png" alt=""></div>
+                    <div class="portfolio-info">
+                        <span>UI-UX DESIGN</span>
+                        <h4>Aplikasi Add Siswa</h4>
+                        <p>I focus on crafting smooth, responsive interfaces that balance aesthetic appeal with practical functionality.</p>
+                        <a href="20-1-2026 Add nilai siswa/index.html">Case Study <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="portfolio-card">
+                    <div class="portfolio-img placeholder-img"><img src="fotobox.png" alt=""></div> 
+                    <div class="portfolio-info">
+                        <span>UI-UX DESIGN</span>
+                        <h4>Fotobox Free Use</h4>
+                        <p>Designed an intuitive dashboard for product management, emphasizing clarity and user efficiency.</p>
+                        <a href="30-09-2025 Fotobox/index.html">Case Study <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="portfolio-card">
+                    <div class="portfolio-img placeholder-img"><img src="perkalian.png" alt=""></div>
+                    <div class="portfolio-info">
+                        <span>UI-UX DESIGN</span>
+                        <h4>Perkalian</h4>
+                        <p>Developed a modern admin panel with a focus on usability and seamless navigation for end users.</p>
+                        <a href="12-08-2025 perkalian/index.html">Case Study <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="portfolio-card">
+                    <div class="portfolio-img placeholder-img"><img src="konversisatuan.png" alt=""></div>
+                    <div class="portfolio-info">
+                        <span>UI-UX DESIGN</span>
+                        <h4>Konversi Satuan</h4>
+                        <p>Created a responsive dashboard layout that adapts smoothly across devices and screen sizes.</p>
+                        <a href="05-08-2025 konversi satuan berat/index.html">Case Study <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="portfolio-card">
+                    <div class="portfolio-img placeholder-img"><img src="pass generate.png" alt=""></div>
+                    <div class="portfolio-info">
+                        <span>UI-UX DESIGN</span>
+                        <h4>Password Generator</h4>
+                        <p>Implemented interactive charts and widgets to visualize product data effectively for stakeholders.</p>
+                        <a href="03-11-2025 Monday password generate/indexpassword.html">Case Study <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="portfolio-card">
+                    <div class="portfolio-img placeholder-img"><img src="gamex.png" alt=""></div>
+                    <div class="portfolio-info">
+                        <span>UI-UX DESIGN</span>
+                        <h4>Errox Game V1 (WASD)</h4>
+                        <p>Enhanced user experience by streamlining workflows and optimizing interface components.</p>
+                        <a href="Game cgpt/index.html">Case Study <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="portfolio-card">
+                    <div class="portfolio-img placeholder-img"><img src="gambarappdrawing.png" alt=""></div>
+                    <div class="portfolio-info">
+                        <span>UI-UX DESIGN</span>
+                        <h4>Drawing App Dashboard</h4>
+                        <p>Enhanced user experience by streamlining workflows and optimizing interface components.</p>
+                        <a href="drawing app cgpt vers/index.html">Case Study <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="portfolio-card">
+                    <div class="portfolio-img placeholder-img"><img src="rmh sakit.png" alt=""></div>
+                    <div class="portfolio-info">
+                        <span>UI-UX DESIGN</span>
+                        <h4>Rumah Sakit Counter</h4>
+                        <p>Enhanced user experience by streamlining workflows and optimizing interface components.</p>
+                        <a href="08-09-2025 rumah sakit counter/index.html">Case Study <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="portfolio-card">
+                    <div class="portfolio-img placeholder-img"><img src="10 soal.png" alt=""></div>
+                    <div class="portfolio-info">
+                        <span>UI-UX DESIGN</span>
+                        <h4>10 Soal Js</h4>
+                        <p>Enhanced user experience by streamlining workflows and optimizing interface components.</p>
+                        <a href="20-10-2025 10 soal/index.html">Case Study <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="portfolio-card">
+                    <div class="portfolio-img placeholder-img"><img src="Kalkulator.png" alt=""></div>
+                    <div class="portfolio-info">
+                        <span>UI-UX DESIGN</span>
+                        <h4>Kalkulator App</h4>
+                        <p>Enhanced user experience by streamlining workflows and optimizing interface components.</p>
+                        <a href="25-08-2025 Kalkulator/index.html">Case Study <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="portfolio-card">
+                    <div class="portfolio-img placeholder-img"><img src="Guess Numba.png" alt=""></div>
+                    <div class="portfolio-info">
+                        <span>UI-UX DESIGN</span>
+                        <h4>Guess Number App</h4>
+                        <p>Enhanced user experience by streamlining workflows and optimizing interface components.</p>
+                        <a href="19-08-2025 guess number/index.html">Case Study <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="portfolio-card">
+                    <div class="portfolio-img placeholder-img"><img src="gebokalien.png" alt=""></div>
+                    <div class="portfolio-info">
+                        <span>UI-UX DESIGN</span>
+                        <h4>Hit The Aliens!</h4>
+                        <p>Enhanced user experience by streamlining workflows and optimizing interface components.</p>
+                        <a href="FunGame v1/index.html">Case Study <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                
+            </div>
+
+            <div style="text-align: center;">
+                <button class="btn btn-outline interactive-btn" data-action="Loading more portfolio items...">More Project</button>
+            </div>
+
+            <div class="cta-banner">
+                <h2>Do you have a Project Idea?<br>Let's discuss your project!</h2>
+                <p>I'm always open to discussing new projects and creative ideas. Let's connect and build something amazing together.</p>
+                <button class="btn btn-primary interactive-btn" data-action="Opening Let's Work Together Form...">Let's work Together <i class="fas fa-arrow-right" style="margin-left: 5px;"></i></button>
+            </div>
+
+            
+        </div>
+    </section>
+
+    <section id="blog">
+        <div class="container">
+            <h2 class="section-title">Blog</h2>
+            <p class="section-subtitle">Check out my recent blog posts where I share insights on design, development, and the latest industry trends.</p>
+            
+            <div class="blog-grid">
+                <div class="blog-card">
+                    <div class="blog-img placeholder-img" style="background: linear-gradient(to right, #434343 0%, black 100%);"></div>
+                    <div class="blog-info">
+                        <div class="meta">22 Oct, 2020 / 246 Comments</div>
+                        <h4 class="interactive-btn" data-action="Reading Blog Post 1...">Designing Engaging User Interfaces for M...</h4>
+                    </div>
+                </div>
+                <div class="blog-card">
+                    <div class="blog-img placeholder-img" style="background: linear-gradient(to top, #fcc5e4 0%, #fda34b 15%, #ff7882 35%, #c8699e 52%, #7046aa 71%, #0c1db8 87%, #020f75 100%);"></div>
+                    <div class="blog-info">
+                        <div class="meta">22 Oct, 2020 / 246 Comments</div>
+                        <h4 class="interactive-btn" data-action="Reading Blog Post 2...">Tips for Effective Dashboard Layouts and...</h4>
+                    </div>
+                </div>
+                <div class="blog-card">
+                    <div class="blog-img placeholder-img" style="background: linear-gradient(to right, #4facfe 0%, #00f2fe 100%);"></div>
+                    <div class="blog-info">
+                        <div class="meta">22 Oct, 2020 / 246 Comments</div>
+                        <h4 class="interactive-btn" data-action="Reading Blog Post 3...">How to Visualize Data for Better Product...</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="bg-gray">
+        <div class="container">
+            <div class="services-content">
+                <div class="services-text">
+                    <h2>What I do?</h2>
+                    <p>I specialize in designing user experiences, crafting engaging interfaces, and building robust web applications that deliver value and usability.</p>
+                    <p>My approach combines creativity and technical expertise to deliver solutions that are both visually appealing and highly functional for users.</p>
+                    <button class="btn btn-primary interactive-btn" data-action="Opening direct message window...">Say Hello!</button>
+                </div>
+                <div class="services-list">
+                    <div class="service-item">
+                        <h4>User Experience (UX)</h4>
+                        <p>I design intuitive and enjoyable experiences by understanding user needs, conducting research, and creating wireframes and prototypes that enhance usability.</p>
+                    </div>
+                    <div class="service-item">
+                        <h4>User Interface (UI)</h4>
+                        <p>I craft visually appealing and consistent interfaces, focusing on layout, color, and typography to ensure a seamless and engaging user journey.</p>
+                    </div>
+                    <div class="service-item">
+                        <h4>Web Development</h4>
+                        <p>I build responsive and high-performance web applications using modern technologies, ensuring accessibility, scalability, and maintainability.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="clients">
+        <div class="container clients-section">
+            <h2>Happy Clients</h2>
+            <p class="section-subtitle" style="margin-top: -30px;">I've had the pleasure of working with a diverse range of companies, from startups to established brands.</p>
+            <div class="clients-logos">
+                <span>Google</span>
+                <span>Dribbble</span>
+                <span>LinkedIn</span>
+                <span>amazon</span>
+                <span>Medium</span>
+                <span>Spotify</span>
+            </div>
+        </div>
+    </section>
+
+    <section id="testimonial" class="bg-gray">
+        <div class="container testimonial-section">
+            <h2>Testimonial</h2>
+            <p class="quote">Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi, minus ducimus quas rerum delectus tempore fuga earum quos, deserunt saepe cupiditate itaque obcaecati maxime, dignissimos nemo asperiores? Facere, nihil dolorum.</p>
+            <div class="testimonial-author">
+                <h5>The Creator</h5>
+                <span>Managing Director, ABC Company</span>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <div class="contact-container bg-gray">
+                <div class="contact-info">
+                    <h2>Let's discuss your Project</h2>
+                    <p>I'm available for freelance work. Drop me a line if you have a project you think I'd be a good fit for.</p>
+                    
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <strong>Address:</strong><br>
+                            <span style="color: var(--text-muted); font-size: 0.9rem;">El rendang😹🥩, 31134</span>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <strong>My Email:</strong><br>
+                            <span style="color: var(--text-muted); font-size: 0.9rem;">roboticbehuman@gmail.com</span>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <strong>Call Me Now:</strong><br>
+                            <span style="color: var(--text-muted); font-size: 0.9rem;">00-123 00000</span>
+                        </div>
+                    </div>
+
+                    <div class="social-icons" style="justify-content: flex-start; margin-top: 30px;">
+                        <a href="#" class="interactive-btn" data-action="Facebook Profile"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="interactive-btn" data-action="Instagram Profile"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="interactive-btn" data-action="Dribbble Profile"><i class="fab fa-dribbble"></i></a>
+                        <a href="#" class="interactive-btn" data-action="LinkedIn Profile"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="interactive-btn" data-action="Behance Profile"><i class="fab fa-behance"></i></a>
+                    </div>
+                </div>
+
+                <form id="contactForm" class="contact-form">
+                    <div class="input-group">
+                        <label>Your Name</label>
+                        <input type="text" required>
+                    </div>
+                    <div class="input-group">
+                        <label>Your Email</label>
+                        <input type="email" required>
+                    </div>
+                    <div class="input-group full-width">
+                        <label>Message</label>
+                        <textarea required></textarea>
+                    </div>
+                    <div class="input-group full-width">
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <button id="scrollTopBtn"><i class="fas fa-chevron-up"></i></button>
+
+    <script>
+        // 1. Smooth Scrolling for Navigation
+        document.querySelectorAll('.nav-links a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelectorAll('.nav-links a').forEach(link => link.classList.remove('active'));
+                this.classList.add('active');
+                document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+
+        // 2. Make EVERY Single Button/Link "Work" via alerts
+        const interactiveElements = document.querySelectorAll('.interactive-btn');
+        interactiveElements.forEach(el => {
+            el.addEventListener('click', (e) => {
+                e.preventDefault(); 
+                const actionData = el.getAttribute('data-action');
+                alert("Action Triggered: " + actionData);
+            });
+        });
+
+        // 3. Contact Form Submission
+        const contactForm = document.getElementById('contactForm');
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault(); 
+            const name = this.querySelector('input[type="text"]').value;
+            alert(`Thanks ${name}! Your message has been "sent" successfully.`);
+            this.reset(); 
+        });
+
+        // 4. Scroll to Top Behavior
+        const scrollTopBtn = document.getElementById("scrollTopBtn");
+        window.onscroll = function() {
+            if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
+                scrollTopBtn.style.display = "flex";
+            } else {
+                scrollTopBtn.style.display = "none";
+            }
+        };
+
+        scrollTopBtn.addEventListener("click", function() {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+    </script>
+</body>
+</html>

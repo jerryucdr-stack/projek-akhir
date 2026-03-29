@@ -1,0 +1,292 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
+
+.utama{
+    width: 100%;
+    height: 108vh;
+    /* border: 2px solid blue; */
+    
+
+}
+
+.judul nav{
+    width: 100%;
+    height: 14vh;
+    background-color: red;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.bungkus{
+    width: 100%;
+    height: 94vh;
+    /* border: 2px solid black; */
+    display: flex;
+}
+
+.kiri{
+    width: 60%;
+    height: 90vh;
+    /* border: 2px solid brown; */
+    overflow: scroll;
+    margin-top: 20px;
+    
+    
+}
+.kanan{
+    width: 40%;
+    height: 90vh;
+    /* border: 2px solid magenta; */
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+} 
+
+.bungkuskanan{
+    width: 80%;
+    height: 70vh;
+    /* border: 2px solid rgb(195, 195, 176); */
+    justify-content: center;
+    align-items: center;
+}
+
+.pnilai{
+    width: 60%;
+    height: 5vh;
+    /* border: 2px solid cyan; */
+    text-align: center;
+    font-size: 20px;
+    font: bold;
+
+}
+
+.nilai{
+    width: 60%;
+    height: 40vh;
+    background-color: red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 60px;
+    color: white;
+    padding: 5px;
+       border-radius: 8px;
+    box-shadow: 4px 4px 1px 1px rgba(119, 118, 118, 0.8);
+}
+
+button{
+    width: 20%;
+    height: 6vh;
+    background-color: red;
+    
+    
+    color: white;
+    padding: 5px;
+       border-radius: 8px;
+    box-shadow: 4px 4px 1px 1px rgba(119, 118, 118, 0.8);
+}
+
+.pembungkuskotak{
+    width: 100%;
+    height: 30vh;
+    /* border: 2px solid yellow; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.pembungkuskotak2{
+    width: 100%;
+    height: 30vh;
+    /* border: 2px solid yellow; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.pembungkuskotak3{
+    width: 100%;
+    height: 30vh;
+    /* border: 2px solid yellow; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.pembungkuskotak4{
+    width: 100%;
+    height: 30vh;
+    /* border: 2px solid yellow; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.pembungkuskotak5{
+    width: 100%;
+    height: 30vh;
+    /* border: 2px solid yellow; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pembungkuskotak6{
+    width: 100%;
+    height: 30vh;
+    /* border: 2px solid yellow; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pembungkuskotak7{
+    width: 100%;
+    height: 30vh;
+    /* border: 2px solid yellow; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pembungkuskotak8{
+    width: 100%;
+    height: 30vh;
+    /* border: 2px solid yellow; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.pembungkuskotak9{
+    width: 100%;
+    height: 30vh;
+    /* border: 2px solid yellow; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pembungkuskotak10{
+    width: 100%;
+    height: 30vh;
+    /* border: 2px solid yellow; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.kotak{
+    width: 90%;
+    height: 23vh;
+    background-color: red;
+    padding: 5px;
+       border-radius: 8px;
+    box-shadow: 4px 4px 1px 1px rgba(119, 118, 118, 0.8);
+    color: white;
+}
+
+.kotak2{
+    width: 90%;
+    height: 23vh;
+    background-color: red;
+    padding: 5px;
+       border-radius: 8px;
+    box-shadow: 4px 4px 1px 1px rgba(119, 118, 118, 0.8);
+    color: white;
+}
+
+.kotak3{
+    width: 90%;
+    height: 23vh;
+    background-color: red;
+    padding: 5px;
+       border-radius: 8px;
+    box-shadow: 4px 4px 1px 1px rgba(119, 118, 118, 0.8);
+    color: white;
+}
+
+.kotak4{
+    width: 90%;
+    height: 23vh;
+    background-color: red;
+    padding: 5px;
+       border-radius: 8px;
+    box-shadow: 4px 4px 1px 1px rgba(119, 118, 118, 0.8);
+    color: white;
+}
+
+.kotak5{
+    width: 90%;
+    height: 23vh;
+    background-color: red;
+    padding: 5px;
+       border-radius: 8px;
+    box-shadow: 4px 4px 1px 1px rgba(119, 118, 118, 0.8);
+    color: white;
+}
+
+.kotak6{
+    width: 90%;
+    height: 23vh;
+    background-color: red;
+    padding: 5px;
+       border-radius: 8px;
+    box-shadow: 4px 4px 1px 1px rgba(119, 118, 118, 0.8);
+    color: white;
+}
+
+.kotak7{
+    width: 90%;
+    height: 23vh;
+    background-color: red;
+    padding: 5px;
+       border-radius: 8px;
+    box-shadow: 4px 4px 1px 1px rgba(119, 118, 118, 0.8);
+    color: white;
+}
+
+.kotak8{
+    width: 90%;
+    height: 23vh;
+    background-color: red;
+    padding: 5px;
+       border-radius: 8px;
+    box-shadow: 4px 4px 1px 1px rgba(119, 118, 118, 0.8);
+    color: white;
+}
+
+.kotak9{
+    width: 90%;
+    height: 23vh;
+    background-color: red;
+    padding: 5px;
+       border-radius: 8px;
+    box-shadow: 4px 4px 1px 1px rgba(119, 118, 118, 0.8);
+    color: white;
+}
+
+.kotak10{
+    width: 90%;
+    height: 23vh;
+    background-color: red;
+    padding: 5px;
+       border-radius: 8px;
+    box-shadow: 4px 4px 1px 1px rgba(119, 118, 118, 0.8);
+    color: white;
+}
+
+
+@media(max-width:667px){
+    button{
+        width: 60px;
+        height: 40px;
+    }
+
+
+}
+

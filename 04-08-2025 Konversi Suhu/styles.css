@@ -1,0 +1,23 @@
+body{
+    font-family: 'Times New Roman', Times, serif;
+    background-color: dodgerblue;
+}
+
+select{
+    width: 15vw;
+    height: 5vh;
+    padding: 5px;
+    border-radius: 6px;
+    background-color:cyan;
+    
+    
+}
+
+
+button{
+    width: 15vw;
+    height: 5vh;
+    padding: 5px;
+    border-radius: 6px;
+    background-color: aqua;
+}

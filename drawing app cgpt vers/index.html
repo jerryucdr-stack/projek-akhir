@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Drawing App</title>
+<style>
+    body {
+        margin: 0;
+        background: #1e1e1e;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 100vh;
+        font-family: sans-serif;
+        color: white;
+    }
+
+    .toolbar {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        background: #2b2b2b;
+        padding: 12px 20px;
+        border-radius: 12px;
+        margin-top: 15px;
+        box-shadow: 0 0 12px #00000055;
+    }
+
+    input[type="color"] {
+        width: 40px;
+        height: 40px;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+    }
+
+    input[type="range"] {
+        cursor: pointer;
+    }
+
+    button {
+        background: #444;
+        border: none;
+        color: white;
+        padding: 8px 16px;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: 0.2s;
+    }
+
+    button:hover {
+        background: #666;
+    }
+
+    canvas {
+        margin-top: 15px;
+        background: white;
+        border-radius: 10px;
+        box-shadow: 0 0 20px #00000066;
+        cursor: crosshair;
+    }
+</style>
+</head>
+<body>
+
+<div class="toolbar">
+    <label>Color: <input type="color" id="color" value="#000000"></label>
+
+    <label>Size: <input type="range" id="size" min="1" max="50" value="10"></label>
+
+    <button id="clear">Clear</button>
+    <button id="save">Save</button>
+</div>
+
+<canvas id="canvas" width="900" height="450"></canvas>
+
+<script>
+    const canvas = document.getElementById("canvas");
+    const ctx = canvas.getContext("2d");
+
+    let drawing = false;
+    let color = document.getElementById("color").value;
+    let size = document.getElementById("size").value;
+
+    function start(e) {
+        drawing = true;
+        draw(e);
+    }
+
+    function stop() {
+        drawing = false;
+        ctx.beginPath();
+    }
+
+    function draw(e) {
+        if (!drawing) return;
+
+        ctx.lineWidth = size;
+        ctx.lineCap = "round";
+        ctx.strokeStyle = color;
+
+        const rect = canvas.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+
+        ctx.lineTo(x, y);
+        ctx.stroke();
+        ctx.beginPath();
+        ctx.moveTo(x, y);
+    }
+
+    canvas.addEventListener("mousedown", start);
+    canvas.addEventListener("mouseup", stop);
+    canvas.addEventListener("mousemove", draw);
+
+    document.getElementById("color").addEventListener("change", (e) => {
+        color = e.target.value;
+    });
+
+    document.getElementById("size").addEventListener("input", (e) => {
+        size = e.target.value;
+    });
+
+    document.getElementById("clear").addEventListener("click", () => {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+    });
+
+    document.getElementById("save").addEventListener("click", () => {
+        const link = document.createElement("a");
+        link.download = "drawing.png";
+        link.href = canvas.toDataURL();
+        link.click();
+    });
+</script>
+
+</body>
+</html>

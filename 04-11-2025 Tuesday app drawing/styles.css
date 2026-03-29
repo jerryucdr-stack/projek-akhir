@@ -1,0 +1,114 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', 'Poppins', 'Roboto', sans-serif;
+
+}
+
+
+.utama{
+    width: 100%;
+    height: 100vh;
+    /* border: 2px solid rebeccapurple; */
+}
+
+.kotak{
+    cursor: crosshair;
+    width: 90%;
+    height: 80%;
+    display: flex;
+}
+
+#canvas{
+    width: 100%;
+    height: 100%;
+}
+
+.title{
+    width: 100%;
+    height: 10vh;
+    background-color: rgb(61, 70, 70);
+    /* border: 2px solid red; */
+    font-size: 10pt;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.toolbox{
+    width: 100%;
+    height: 5vh;
+    /* border: 2px solid yellow; */
+    background-color: grey;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+}
+
+.bungkus{
+    width: 100%;
+    height: 85vh;
+    /* border: 2px solid green; */
+    background-color: rgb(39, 38, 38);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.kotak{
+    width: 90%;
+    height: 80%;
+    border-radius: 10px;
+    /* border: 2px solid violet; */
+    background-color: #ffff;
+}
+
+button {
+    width: 5%;
+        background: #272727;
+        border: none;
+        color: white;
+        padding: 8px 16px;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: 0.2s;
+        gap: 10px;
+    }
+
+    button:hover{
+        background: #444;
+        
+    }
+
+input{
+    width: 3%;
+    height: 5vh;
+    border-radius: 50%;
+    border: none;
+    background-color: grey;
+    
+}
+
+span{
+    color: #1e1e1e;
+}
+
+@media(max-width:667px){
+    .toolbox{
+        
+        gap: 5px;
+    }
+
+    button{
+        width: 15%;
+        height: 5vh;
+    }
+
+    input{
+        width: 7%;
+
+    }
+}

@@ -1,0 +1,45 @@
+*{
+    padding : 0;
+    margin: 0;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+
+
+
+body{
+    background-color: cyan
+}
+
+h2{
+    color:darkslateblue
+}
+
+h2{
+    margin-left: 5%;
+}
+
+input{
+     width: 15vw;
+    height: 3vh;
+    padding: 5px;
+    border-radius: 4px;
+    background-color:rgb(189, 232, 243);
+    margin-top: 2%;
+    margin-left: 5%;
+}
+
+button{
+     
+    padding: 5px;
+    border-radius: 4px;
+    background-color:rgb(189, 232, 243);
+    margin-top: 2%;
+    margin-left: 5%;
+}
+
+p{
+    margin-top: 2%;
+    margin-left: 5%;
+    font-size: 20pt;
+}

@@ -1,0 +1,47 @@
+body{
+   font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background-color:deepskyblue;
+    
+
+}
+
+
+
+
+.bungkus{
+   display: flex;
+   justify-content: center;
+   align-items: center; 
+
+}
+
+.kotak{
+    width: 30vw;
+    height: 80vh;
+    background-color: aqua;
+   text-align: center;
+    border-radius: 7px;
+    padding: 1px;
+    box-shadow: 5px 5px 2px 2px rgba(93, 92, 92, 0.8);
+    
+}
+
+input{
+    width: 15vw;
+    height: 3vh;
+    padding: 5px;
+    border-radius: 4px;
+    background-color:rgb(189, 232, 243);
+    
+}
+
+button{
+    width: 9vw;
+    height: 5vh;
+    padding: 5px;
+    border-radius: 6px;
+    background-color: #0FAC46;
+    color: white;
+   
+    box-shadow: 3px 4px 1px 1px rgba(119, 118, 118, 0.8);
+}

@@ -1,0 +1,87 @@
+body{
+    width: 100%;
+    height: 100%;
+    background-color: #BDAAAA;
+}
+
+.kotaknama {
+    width: 70vw;
+    height: 10vh;
+    margin-left: 13%;
+    background-color: white;
+    text-align: center;
+    border-radius: 7px;
+    padding: 1px;
+    box-shadow: 5px 5px 2px 2px rgba(93, 92, 92, 0.8);
+    margin-top: 2%;
+     background-color: #d9d9d9;
+}
+
+.kotakkanankiri {
+   justify-content: space-between;
+   text-align: center;
+   display: flex;
+}
+
+
+.kanan{
+    width: 32vw;
+    height: 60vh;
+    background-color: #d9d9d9;
+    margin-top: 2%;
+    border-radius: 7px;
+    box-shadow: 5px 5px 2px 2px rgba(93, 92, 92, 0.8);
+    margin-left: 14%;
+
+}
+
+input{
+    width: 24vw;
+    height: 3vh;
+    padding: 5px;
+    border-radius: 6px;
+    background-color:white;
+}
+
+
+.kanan p{
+    margin-right: 60%;
+}
+
+select{
+    width: 25vw;
+    height: 5vh;
+    padding: 5px;
+    border-radius: 6px;
+    background-color:white;
+
+}
+
+button{
+    width: 9vw;
+    height: 5vh;
+    padding: 5px;
+    border-radius: 6px;
+    background-color: #0FAC46;
+    color: white;
+    margin-right: 50%;
+    margin-top: 8%;
+    box-shadow: 4px 4px 1px 1px rgba(119, 118, 118, 0.8);
+}
+
+.kiri{
+    width: 32vw;
+    height: 60vh;
+    background-color: #d9d9d9;
+    margin-top: 2%;
+    border-radius: 7px;
+   box-shadow: 5px 5px 2px 2px rgba(93, 92, 92, 0.8);
+    margin-right: 18%;
+
+}
+
+.hasil{
+    margin-top: 12%;
+    font-size: 20px;
+}
+

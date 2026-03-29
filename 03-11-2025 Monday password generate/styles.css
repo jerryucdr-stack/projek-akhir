@@ -1,0 +1,91 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+}
+
+.utama{
+    width: 100%;
+    height: 100vh;
+    
+}
+
+.judul{
+    width: 100%;
+    height: 11vh;
+    background-color:rgb(56, 178, 227);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.bungkus{
+    width: 100%;
+    height: 89vh;
+    /* border: 2px solid green; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.kiri{
+    width: 50%;
+    height: 89vh;
+    
+}
+
+.kanan{
+    width: 50%;
+    height: 89vh;
+    
+}
+
+.satu input{
+    width: 30%;
+    height: 3vh;
+    border-radius: 6px;
+    background-color: rgb(6, 193, 47);
+    color: white;
+   
+    padding: 5px;
+}
+
+button{
+    width: 20%;
+    height: 5vh;
+    border-radius: 6px;
+    background-color: maroon;
+    color: white;
+   
+    padding: 5px;
+}
+
+.output{
+    font-size: 25pt;
+}
+
+label{
+    font-size: 14pt
+}
+
+@media(max-width:667px){
+    .bungkus{
+        flex-wrap: wrap;
+    }
+
+    .kiri{
+        width: 100%;
+        height: 30vh;
+    }
+
+    .kanan{
+        width: 100%;
+        height: 60vh;
+    }
+
+    button{
+        width: 40%;
+        height: 7vh;
+    }
+}

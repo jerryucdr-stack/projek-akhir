@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Function</title>
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+<body>
+    <h1>Function Operator</h1>
+    <p>Masukan suhu</p>
+    <input id= "ang1" type="number">
+   
+    <p>Pilih Awal :</p>
+    <select name="" id="awal">
+        <option value="c">Celcius</option>
+        <option value="r">Reamur</option>
+        <option value="k">Kelvin</option>
+        <option value="f">Fahreinhet</option>
+        
+    </select>
+
+    <p>Konvert ke :</p>
+    <select name="" id="tujuan">
+        <option value="c">Celcius</option>
+        <option value="r">Reamur</option>
+        <option value="k">Kelvin</option>
+        <option value="f">Fahreinhet</option>
+        
+    </select>
+
+
+
+    <p>hasil : <span id="hasil"></span></p>
+    <button onclick="btn()">Hitung</button>
+
+    <script>
+        
+
+        
+        
+
+        function btn (){
+        let angka1 = parseFloat.document.getElementById('ang1').value;
+        let awal = parseFloat.document.getElementById('awal').value;
+        let tujuan = document.getElementById('tujuan'). value;
+         
+            
+
+
+           if(awal === 'c'){
+                if(tujuan === 'k'){
+                    jumlah = angka1 + 273
+                    document.getElementById('hasil').innerHTML = jumlah;
+                    
+                    
+                }else if(tujuan === 'f'){
+                    jumlah = + (9/5) + angka1 + 32
+                    document.getElementById('hasil').innerHTML = jumlah;
+                }else if(tujuan === 'r'){
+                    jumlah = (4/5) * angka1 
+                    document.getElementById('hasil').innerHTML = jumlah;
+                }else{
+                    jumlah = angka1
+                    document.getElementById('hasil').innerHTML = jumlah;
+                }
+                
+
+                    
+                }
+        }
+
+    </script>
+</body>
+</html>

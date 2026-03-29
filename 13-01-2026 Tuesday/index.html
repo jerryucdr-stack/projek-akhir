@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Latihan For Loop</title>
+</head>
+<body>
+    <div class="bungkus">
+        
+
+        <div class="kotaktengah">
+            <input type="number" id="numberInput" placeholder="Masukan Angka">
+        <button onclick="tampilkanAngka()">Tampilkan</button>
+
+        <h3>Hasil</h3>
+        <div id="output"></div>
+
+        </div>
+    </div>
+
+    <script>
+        function tampilkanAngka() {
+            let angka = document.getElementById("numberInput").value;
+            let output = document.getElementById("output");
+
+            output.innerHTML = "";
+
+            // FOR LOOP - UNTUK MENAMPILKAN ANGKA 1 SAMPAI NUMBERINPUT
+            output.innerHTML += "<strong>Angka 1 sampai " + angka + ":</strong><br>";
+            for(let i = 1; i <= angka; i++){
+               output.innerHTML += i + " ";
+            }
+
+            output.innerHTML += "<br><br>";
+            
+// genap
+            output.innerHTML += "<strong>Angka Genap " + angka + ":</strong><br>";
+            for(let i = 1; i <= angka; i++){
+                if(i % 2 === 0)
+                output.innerHTML += i + " ";
+            }
+
+            output.innerHTML += "<br><br>";
+// ganjil
+            output.innerHTML += "<strong>Angka Ganjil " + angka + ":</strong><br>";
+            for(let i = 1; i <= angka; i++){
+                if(i % 2 === 1)
+                output.innerHTML += i + " ";
+            }
+
+            output.innerHTML += "<br><br>";
+        
+
+// angka kelipatan 3
+
+        output.innerHTML += "<strong>Angka Kelipatan 3 " + angka + ":</strong><br>";
+            for(let i = 1; i <= angka; i++){
+                if(i % 3 === 0)
+                output.innerHTML += i + " ";
+            }
+
+        }
+        
+    </script>
+
+
+</body>
+</html>

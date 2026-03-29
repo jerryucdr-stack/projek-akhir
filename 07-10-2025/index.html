@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="bungkus">
+    <h1>Scroll untuk melihat animasi</h1>
+
+<div class="bungkus2">
+    <div class="box"><h2>Demi Kemuliaan</h2></div>
+    <div class="box"><h2>Time To Shine!</h2></div>
+    <div class="box"><h2>H2o</h2></div>
+    <div class="box"><h2>O2</h2></div>
+    <div class="box"><h2>NaCl</h2></div>
+    <div class="box"><h2>Cristianooo!</h2></div>
+    <div class="box"><h2>Lorem, ipsum.</h2></div>
+    <div class="box"><h2>1+1</h2></div>
+    <div class="box"><h2>EP=M.G.H</h2></div>
+    <div class="box"><h2>I'am, Iron Man</h2></div>
+    <div class="box"><h2>Oasis</h2></div>
+    <div class="box"><h2>Fe=Besi</h2></div>
+    <div class="box"><h2>Ransomware</h2></div>
+    <div class="box"><h2>Khabib Nurmagedov</h2></div>
+    <div class="box"><h2>Focus on career</h2></div>
+    <div class="box"><h2>Wing Chun</h2></div>
+
+</div>
+</div>
+    <script>
+        const boxes = document.querySelectorAll('.box');
+
+        window.addEventListener('scroll',checkBoxes)
+
+        checkBoxes()
+
+        function checkBoxes(){
+            const triggerButton = window.innerHeight / 5 * 4
+
+            boxes.forEach(box => {
+                const boxTop = box.getBoundingClientRect().top
+
+                if(boxTop < triggerButton){
+                    box.classList.add('show')
+
+                }else{
+                    box.classList.remove('show')
+                }
+            })
+        }
+    </script>
+</body>
+</html>

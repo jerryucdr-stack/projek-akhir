@@ -1,0 +1,95 @@
+body{
+    width: 100;
+    height: 100;
+    background: linear-gradient(45deg, #1c488f, #39c0ff);
+    
+    
+    
+}
+
+.bungkus{
+    display: flex;
+    justify-content: center;
+    
+    
+}
+
+
+
+.kiri{
+    width: 15vw;
+    height: 60vh;
+    
+}
+
+hr{
+    border: none;
+    border-top: 1px solid #ccc;
+    margin: 10px 0;
+}
+
+.kiri h4{
+    margin-top: 5px;
+    text-align: center;
+}
+
+.kiri-bawah{
+    text-align: center;
+    margin-top: 50px;
+}
+
+.box{
+    
+    width: 150px;
+    height: 80px;
+    background-color: gold;
+    margin: 0 auto;
+    border-radius: 10px;
+    margin-top: 5px;
+}
+
+.circle{
+    width: 80px;
+    height: 80px;
+    background-color: purple;
+    border-radius: 50%;
+    margin: 20px auto;
+    
+}
+
+
+
+.kiri-bawah hr{
+    margin-top: 5px;
+
+}
+
+.tabel{
+    width: 60vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    margin-top: 20%;
+    height: 60vw;
+    margin-right: 30%;
+}
+
+.elementSong{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+   
+    
+}
+
+
+
+button{
+    width: 6vw;
+    height: 6vh;
+    padding: 5px;
+    border-radius: 4px;
+    background-color:rgb(189, 232, 243);
+   
+}

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>8 September 2025</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="judul">
+    <h1>Rumah Sakit Indonesia Raya</h1>
+  </div>
+   
+
+<div class="bungkus">  
+    <div class="container">
+    <h3>Counter 01</h3>
+    
+    <p id="number">D0</p>
+
+
+<div class="buttonalat">
+    <div class="minus">
+    <button id="minus" onclick="kurang()"> - </button>
+</div>
+
+<div class="reset">
+    <button id="reset" onclick="reset()">Reset</button>
+</div>
+
+<div class="plus">
+    <button id="plus" onclick="tambah()"> + </button>
+    </div>
+</div>    
+    
+</div>
+
+
+   
+    <div class="container2">
+    <h3>Counter 02</h3>
+    <p id="number1">A0</p>
+    <div class="buttonalat">
+    <div class="minus1">
+    <button id="minus1" onclick="kurang1()"> - </button>
+</div>
+
+<div class="reset1">
+    <button id="reset1" onclick="reset1()">Reset</button>
+</div>
+
+<div class="plus1">
+    <button id="plus1" onclick="tambah1()"> + </button>
+    </div>
+</div>   
+    
+    </div>
+</div>
+
+
+
+
+
+
+    <script>
+        let number = 0;
+
+        function ubahTampilan(){
+            document.getElementById('number').textContent = `D${number}`;
+            document.getElementById('plus').disabled = number === 10;
+            document.getElementById('minus').disabled = number === 0;
+            
+        }
+
+        function tambah(){
+            number++;
+            ubahTampilan();
+        }
+
+        function kurang(){
+            number--;
+            ubahTampilan();
+            
+        }
+
+        function kurang(){
+            if(number > 0){
+                number--;
+                ubahTampilan();
+            }
+
+            
+        }
+
+        function tambah(){
+            if(number < 10){
+            number++;     
+            ubahTampilan();
+        
+        }
+    } 
+
+    function reset(){
+        number = 0
+        ubahTampilan();
+    }
+
+// ppppp
+
+    let number1 = 0;
+
+        function ubahTampilan1(){
+            document.getElementById('number1').textContent = `A${number1}`;;
+            document.getElementById('plus1').disabled = number1 === 10;
+            document.getElementById('minus1').disabled = number1 === 0;
+            
+        }
+
+        function tambah1(){
+            number1++;
+            ubahTampilan1();
+        }
+
+        function kurang1(){
+            number1--;
+            ubahTampilan1();
+            
+        }
+
+        function kurang1(){
+            if(number1 > 0){
+                number1--;
+                ubahTampilan1();
+            }
+
+            
+        }
+
+        function tambah1(){
+            if(number1 < 10){
+            number1++;     
+            ubahTampilan1();
+        
+        }
+    } 
+
+    function reset1(){
+        number1 = 0
+        ubahTampilan1();
+    }
+
+
+
+    </script>
+</body>
+</html>

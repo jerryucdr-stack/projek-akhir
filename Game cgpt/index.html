@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Top Down Shooter</title>
+<style>
+    body {
+        margin: 0;
+        overflow: hidden;
+        background: #1e1e1e;
+        font-family: Arial;
+    }
+
+    #player {
+        width: 40px;
+        height: 40px;
+        background: cyan;
+        position: absolute;
+        top: 300px;
+        left: 300px;
+        border-radius: 10px;
+        box-shadow: 0 0 15px cyan;
+    }
+
+    .bullet {
+        width: 10px;
+        height: 10px;
+        background: yellow;
+        position: absolute;
+        border-radius: 50%;
+    }
+
+    .enemy {
+        width: 40px;
+        height: 40px;
+        background: red;
+        position: absolute;
+        border-radius: 15px;
+        box-shadow: 0 0 15px red;
+    }
+
+    #score {
+        position: fixed;
+        top: 10px;
+        left: 10px;
+        font-size: 28px;
+        color: white;
+    }
+</style>
+</head>
+<body>
+
+<div id="player"></div>
+<div id="score">Score: 0</div>
+
+<script>
+    const player = document.getElementById("player");
+    const scoreText = document.getElementById("score");
+
+    let px = 300, py = 300;
+    const speed = 4;
+
+    let keys = {}; // UNTUK HOLDING MOVEMENT
+
+    document.addEventListener("keydown", (e) => {
+        keys[e.key] = true;
+        e.preventDefault();
+    });
+
+    document.addEventListener("keyup", (e) => {
+        keys[e.key] = false;
+    });
+
+    // SHOOT
+    document.addEventListener("keydown", (e) => {
+        if (e.key === " " || e.key === "Spacebar") shoot();
+    });
+
+    function movePlayer() {
+        if (keys["w"] || keys["W"] || keys["ArrowUp"]) py -= speed;
+        if (keys["s"] || keys["S"] || keys["ArrowDown"]) py += speed;
+        if (keys["a"] || keys["A"] || keys["ArrowLeft"]) px -= speed;
+        if (keys["d"] || keys["D"] || keys["ArrowRight"]) px += speed;
+
+        // Batas layar
+        px = Math.max(0, Math.min(window.innerWidth - 40, px));
+        py = Math.max(0, Math.min(window.innerHeight - 40, py));
+
+        player.style.left = px + "px";
+        player.style.top = py + "px";
+    }
+
+    function shoot() {
+        const bullet = document.createElement("div");
+        bullet.classList.add("bullet");
+        document.body.appendChild(bullet);
+
+        bullet.style.left = px + 15 + "px";
+        bullet.style.top = py + 15 + "px";
+
+        let by = py + 15;
+
+        const move = setInterval(() => {
+            by -= 8;
+            bullet.style.top = by + "px";
+
+            enemies.forEach((enemy, i) => {
+                if (checkCollision(bullet, enemy)) {
+                    enemy.remove();
+                    enemies.splice(i, 1);
+                    bullet.remove();
+                    clearInterval(move);
+                    score++;
+                    scoreText.textContent = "Score: " + score;
+                }
+            });
+
+            if (by < -20) {
+                bullet.remove();
+                clearInterval(move);
+            }
+        }, 16);
+    }
+
+    let enemies = [];
+    let score = 0;
+
+    function spawnEnemy() {
+        const enemy = document.createElement("div");
+        enemy.classList.add("enemy");
+        document.body.appendChild(enemy);
+
+        const ex = Math.random() * (window.innerWidth - 40);
+        enemy.style.left = ex + "px";
+        enemy.style.top = "-50px";
+        enemies.push(enemy);
+
+        let ey = -50;
+
+        const move = setInterval(() => {
+            ey += 2;
+            enemy.style.top = ey + "px";
+
+            if (checkCollision(player, enemy)) {
+                alert("GAME OVER — Score: " + score);
+                location.reload();
+            }
+
+            if (ey > window.innerHeight + 50) {
+                enemy.remove();
+                enemies.splice(enemies.indexOf(enemy), 1);
+                clearInterval(move);
+            }
+        }, 16);
+    }
+
+    setInterval(spawnEnemy, 900);
+
+    function checkCollision(a, b) {
+        const r1 = a.getBoundingClientRect();
+        const r2 = b.getBoundingClientRect();
+        return !(
+            r1.right < r2.left ||
+            r1.left > r2.right ||
+            r1.bottom < r2.top ||
+            r1.top > r2.bottom
+        );
+    }
+
+    function gameLoop() {
+        movePlayer();
+        requestAnimationFrame(gameLoop);
+    }
+
+    gameLoop();
+</script>
+
+</body>
+</html>

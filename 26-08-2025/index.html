@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playlist by Ryu</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="bungkus">
+    <div class="kiri">
+        <h3>🏠Home</h3>
+        <h3>🔎Search</h3>
+        <h3>📻Radio</h3>
+        <hr>
+        <h4>Playlist</h4>
+        <li>Toronto 2014 - DC</li>
+        <li>h</li>
+        <li>h</li>
+        <li>h</li>
+        <li>h</li>
+        <h4>New Playlist +</h4>
+
+        <div class="kiri-bawah">
+            <div class="box"></div>
+            <h4>Welcome Mr.Ryu</h4>
+            <div class="circle"></div>
+            <hr>
+        </div>
+    </div>
+
+<div class="atastabel">
+    <div class="kotaksearch">
+      
+    </div>
+
+    <div class="bawahsearch">
+
+    </div>
+</div>
+    
+
+    <div class="tabel">
+
+        
+    <table border="1">
+        <tr>
+            <th>#</th>
+            <th>Title</th>
+            <th>Artist</th>
+            <th>Album</th>
+            <th>Waktu</th>
+        </tr>
+
+        <tr onclick="pilihlagu(0)">
+            <td>1</td>
+            <td>All Too Well </td>
+            <td>Taylor Swift</td>
+            <td>Taylor version</td>
+            <td>5:29</td>
+        </tr>
+
+        <tr onclick="pilihlagu(1)">
+            <td>2</td>
+            <td>Toronto 2014</td>
+            <td>Daniel Caesar</td>
+            <td>gtw</td>
+            <td>5:00</td>
+        </tr>
+
+        <tr onclick="pilihlagu(2)">
+            <td>3</td>
+            <td>Best Part </td>
+            <td>Daniel Caesar (H.E.R)</td>
+            <td>gtw</td>
+            <td>3:29</td>
+        </tr>
+
+        <tr onclick="pilihlagu(3)">
+            <td>4</td>
+            <td>Pluto Projector </td>
+            <td>Rex Orange C</td>
+            <td>gtw</td>
+            <td>4:38</td>
+        </tr>
+
+        <tr onclick="pilihlagu(4)">
+            <td>5</td>
+            <td>Superpowers (Official Audio)</td>
+            <td>Daniel Caesar</td>
+            <td>gtw</td>
+            <td>2:54</td>
+        </tr>
+
+        <tr onclick="pilihlagu(5)">
+            <td>6</td>
+            <td>Saturn</td>
+            <td>SZA</td>
+            <td>gtw</td>
+            <td>3:07</td>
+        </tr>
+
+        <tr onclick="pilihlagu(6)">
+            <td>7</td>
+            <td>God's Plan</td>
+            <td>Drake</td>
+            <td>gtw</td>
+            <td>3:18</td>
+        </tr>
+
+        <tr onclick="pilihlagu(7)">
+            <td>8</td>
+            <td>Not Like Us</td>
+            <td>Kendrick Lamar</td>
+            <td>gtw</td>
+            <td>4:33</td>
+        </tr>
+
+        <tr onclick="pilihlagu(8)">
+            <td>9</td>
+            <td>Animal Crosing </td>
+            <td>-</td>
+            <td>gtw</td>
+            <td>1:00:35</td>
+        </tr>
+
+        <tr onclick="pilihlagu(9)">
+            <td>10</td>
+            <td>Last Night on Earth </td>
+            <td>Green Day</td>
+            <td>gtw</td>
+            <td>3:53</td>
+        </tr>
+    </div>
+    </table>
+
+        <div class="elementSong">
+    
+    <audio src="" id="audioPlayer" controls></audio>
+    <button onclick="prevSong()">Prev</button>
+    <button onclick="pauseSong()">Play/Pause</button>
+    <button onclick="stopSong()">Stop</button>
+    <button onclick="nextSong()">Next</button>
+    <button onclick="ulangi()">Repeat : Off</button>
+    </div>
+</div> 
+
+
+        <div class="kanan">
+            <div class="lirik" id="lirik">
+        Lirik lagu ada di sini!
+    </div>
+        </div>
+    
+    
+
+    <script>
+        const audioPlayer = document.getElementById('audioPlayer');
+        const lirik = document.getElementById('lirik');
+     const btnUlangi = document.querySelector("button[onclick='ulangi()']");
+     let isRepeat = false;
+
+     const lagu = [
+        {
+            src: 'All Too Well Taylors Version - Taylor Swift.flac',lirik:'I walked through the door with you The air was cold But something about it felt like home somehow And I left my scarf there at your sisters house And youve still got it in your drawer even now Oh your sweet disposition And my wide-eyed gaze Were singing in the car getting lost upstate Autumn leaves falling down like pieces into place And I can picture it after all these days And I know its long gone and that magics not here no more And I might be okay but Im not fine at all Cause there we are again on that little town street You almost ran the red cause you were lookin over at me Wind in my hair I was there I remember it all too well Photo album on the counter Your cheeks were turning red You used to be a little kid with glasses in a twin-sized bed And your mothers telling stories bout you on the tee-ball team You told me bout your past thinking your future was me And I know its long gone and there was nothing else I could do And I forget about you long enough to forget why I needed to Cause there we are again in the middle of the night Were dancing round the kitchen in the refrigerator light Down the stairs I was there I remember it all too well yeah And maybe we got lost in translation Maybe I asked for too much But maybe this thing was a masterpiece til you tore it all up Running scared I was there I remember it all too well And you call me up again just to break me like a promise So casually cruel in the name of being honest Im a crumpled up piece of paper lying here Cause I remember it all all all Too well Time wont fly its like Im paralyzed by it Id like to be my old self again But Im still trying to find it After plaid shirt days and nights when you made me your own Now you mail back my things and I walk home alone But you keep my old scarf from that very first week Cause it reminds you of innocence And it smells like me You cant get rid of it Cause you remember it all too well yeah Cause there we are again when I loved you so Back before you lost the one real thing youve ever known It was rare I was there I remember it all too well Wind in my hair you were there you remember it all Down the stairs you were there you remember it all It was rare I was there I remember it all too well'
+
+        },
+        {
+            src: 'Daniel Caesar - Toronto 2014 (Official Audio).mp3',lirik:'Sometimes it feels like its a trick Everything is not as it seems If only I could find a pair of glasses To help me see the ones who truly be They live and we sleep Pray my days will never hit one Take me far away from the sun If only I could find my way through space-time Back to when I was happy being me They live and we- I can hear the bells ringin, remindin us why Were still here singin, its for the time Were stuck in the Matrix, living a lie Im not afraid to die Take me back to 2014 Saw a pic this morning Far along the journey The future was alluring On the other side of TVs, hoping that they see me But, they hardly see me At least thats how I see things Isnt it funny how the time flies Like a G5 jet in the turbulence Well, we gon make it home tonight Alright? Alright? Right, alright My misery is boring, finally feel confident Yes, thats an accomplishment Many more commas to get I can hear the bells ringin Remindin us why Were still here singin, its Father Time Were stuck in the Matrix, living a lie Im not afraid to die You know, Stockholm, long roads, on go You cant even reach me Just know, whenever you need me, well figure it out Look up and youll see me, and Ill be around Cause when Im home, Im lost, lets go make it look easy Oh, take it easy on me, its still my city, its still my city'
+        },
+
+        {
+            src: 'H.E.R. - Best Part (Lyrics) Ft. Daniel Caesar.mp3',lirik:'Best Part Lyrics'
+        },
+
+        {
+            src: 'Rex Orange County - Pluto Projector (Official Audio).mp3',lirik:'Pluto Projector Lyrics'
+        },
+
+        {
+            src: 'Daniel Caesar - Superpowers (Official Audio).mp3',lirik:'Superpowers Lyrics'
+        },
+
+        {
+            src: 'SZA - Saturn.mp3',lirik:'Saturn Lyrics'
+        },
+
+         {
+            src: 'Gods Plan.mp3',lirik:'Gods Plan Lyrics'
+        },
+
+        {
+            src: 'Not Like Us.mp3',lirik:' Not Like Us Lyrics'
+        },
+
+        {
+            src: 'animal crossing new horizons ~ lofi (1 hour).mp3',lirik:'Animal Crosing lofi Lyrics'
+        },
+
+        {
+            src: 'Green Day - Last Night on Earth.mp3',lirik:'Last Night On Earth Lyrics'
+        }
+    ];
+
+    let laguindex = 0;
+
+    function loadSong(index){
+        laguindex = index;
+        audioPlayer.pause();
+        audioPlayer.src = lagu[index].src;
+        audioPlayer.load();
+        audioPlayer.play();
+        lirik.innerText = lagu[index].lirik
+    }
+
+    function pauseSong(){
+        if(audioPlayer.paused){
+            audioPlayer.play()
+        }else{
+            audioPlayer.pause()
+        }
+    }
+
+    function stopSong(){
+        audioPlayer.pause();
+        audioPlayer.currentTime = 0;
+        
+    }
+
+    function nextSong(){
+        laguindex = (laguindex + 1 ) % lagu.length;
+        loadSong(laguindex);
+    }
+
+    function prevSong(){
+        laguindex = (laguindex - 1 + lagu.length ) % lagu.length;
+        loadSong(laguindex);
+    }
+
+    function pilihlagu(index){
+        loadSong(index);
+    }
+
+    function ulangi(){
+        isRepeat = !isRepeat;
+        btnUlangi.innerText = isRepeat ? "Repeat On" : "Repeat: Off";
+    }
+
+    audioPlayer.addEventListener('ended', function(){
+        if(isRepeat){
+            audioPlayer.currentTime = 0;
+            audioPlayer.play();
+        }else{
+            nextSong();
+        }
+    });
+    </script>
+
+
+
+
+
+</body>
+</html>

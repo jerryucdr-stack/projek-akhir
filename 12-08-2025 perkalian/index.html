@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For loop</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+ <div class="bungkus"> 
+<div class="kotak">
+
+    <h1>Programm Perkalian</h1>
+    <span>Masukan Angka</span><br>
+    <input type="number"  id="angka"><br><br>
+    <button onclick="hitung()">Hitung</button><br>
+    <p>hasil : <br><span id="hasil"></span></p>
+
+    </div>   
+ </div>  
+    <script>
+
+        function hitung(){
+            let angka= parseFloat (document.getElementById('angka').value)
+            let result = ''
+            
+            for(let i = 1; i <= 10; i++){
+                result += `${i} x ${angka} = ${i*angka} <br>`
+            }
+            document.getElementById('hasil').innerHTML = result;
+        }
+
+          
+
+
+
+
+
+
+
+
+
+        // let teman = ['azka','milano','wira','darrel' ]
+        // console.log(teman);
+        
+        // for(let i = 0; i < teman.length; i++){
+        //     console.log(`teman ke-${i+1} ${teman[i]}`)
+            
+        // }
+
+
+        //  for(let i = 1; i <= 3 ; i++){
+        //     console.log('i see myself ' +i)
+
+        //  }
+         
+        //  console.log('in the mirror');
+         
+
+    </script>
+</body>
+</html>

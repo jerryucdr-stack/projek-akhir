@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    
+    <nav>Theater Tv Show Movies Videos
+        <hr>
+    </nav>
+    
+<div class="container">
+
+
+    
+   
+
+    
+<div class="kotak1">
+    <img src="awalan.png" alt="" id="img">
+    <button >Like</button>
+    <button>Unlike</button>
+
+
+    </div>
+
+    <div class="kotak2">
+
+    <h2>Judul Film</h2>
+
+    <button>Tonton</button>
+    <button>Download</button>
+    <p id="sinopsis">Sinopsis</p>
+
+    </div>
+
+    
+
+    <div class="kotak3">
+        <h3>Pilih Film</h3>
+         <select name="" id="film">
+        <option value="">-- Daftar Film --</option>
+        <option value="film1">The Conjuring - Last Rites</option>
+        <option value="film2">Exit 8</option>
+        <option value="film3">The Long Walk</option>
+        <option value="film4">Marvel</option>
+        <option value="film5">Stand by me</option>
+        <option value="film6">Stand by me 2</option>
+        <option value="film7">The Conjuring - Last Rites</option>
+        <option value="film8">Exit 8</option>
+        <option value="film9">The Long Walk</option><br>
+
+
+        <h3>harga</h3>
+
+         <p id="harga">0</p>
+    
+
+    <input type="number" id="j_tiket">
+    <button onclick="hitung()">Hitung</button>
+    <p>Total Bayar : <span id="bayar">0</span></p>
+    </select>
+
+    </div>
+
+   
+
+    <!-- </div> -->
+    
+    
+
+    <script>
+        let selectElement = document.getElementById('film');
+        let imgElement = document.getElementById('img');       
+        selectElement.addEventListener("change", function() {
+            let selectValue = selectElement.value;
+
+            if(selectValue === "film1"){
+                imgElement.src = 'gambar1.png'
+                harga = 50000
+                sinopsis = 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quis temporibus minus placeat officia error accusamus. Molestiae dignissimos recusandae consequuntur omnis quod? Perspiciatis ipsum quam pariatur aliquid exercitationem possimus, dolorum eum! '
+
+                
+
+
+                
+
+            }else if (selectValue === "film2"){
+                imgElement.src = 'gambar2.png'
+            }else if (selectValue === "film3"){
+                imgElement.src = 'gambar3.png'
+            }
+            const format = harga.toLocaleString('id-ID');
+            document.getElementById("harga").textContent = harga;
+            document.getElementById("sinopsis").textContent = sinopsis;
+       } );
+        function hitung(){
+            let j_tiket = parseFloat(document.getElementById('j_tiket').value);
+            let bayar = harga * j_tiket
+            const format = bayar.toLocaleString('id-ID');
+            document.getElementById('bayar').textContent =  `Rp${format}`;
+            
+        }
+
+
+    </script>
+</body>
+</html>

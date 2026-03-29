@@ -1,0 +1,62 @@
+body{
+    width: 100%;
+    height: 100%;
+}
+
+
+img{
+    width: 25vw;
+    height: 70vh;
+    
+}
+
+nav{
+    width: 100vw;
+    height: 10vh;
+}
+
+.container{
+    display: flex;
+    
+}
+
+.kotak1{
+    width: 27vw;
+    margin-left: 4%;
+}
+
+.kotak2{
+    width: 30vw;
+    height: 70vh;
+    background-color: #ffffff;
+}
+
+.kotak3{
+    width: 20vw;
+    height: 70vh;
+    background-color: #b41f1f;
+    margin-left: 4%;
+    padding: 10px;
+}
+
+button{
+    width: 9vw;
+    height: 5vh;
+    padding: 5px;
+   
+    background-color: #ac0f0f;
+    color: white;
+     border-radius: 6px;
+    box-shadow: 4px 4px 1px 1px rgba(119, 118, 118, 0.8);
+}
+
+
+h3{
+    color: white;
+}
+
+select{
+    width: 16vw;
+    height: 6vh;
+    margin-left: 8%;
+}

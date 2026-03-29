@@ -1,0 +1,127 @@
+body{
+    width: 100;
+    height: 100;
+}
+
+.judul h1{
+    text-align: center;
+}
+
+.bungkus{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.container{
+    margin-top: 5px;
+    width: 25vw;
+    height: 45vh;
+    background-color: #C1EFED;
+     padding: 60px;
+    border-radius: 6px;
+    box-shadow: 3px 4px 1px 1px rgba(119, 118, 118, 0.8);
+}
+
+.container2{
+     margin-top: 5px;
+    width: 25vw;
+    height: 45vh;
+     background-color: #C1EFED;
+      padding: 60px;
+    border-radius: 6px;
+    box-shadow: 3px 4px 1px 1px rgba(119, 118, 118, 0.8);
+}
+
+p{
+    text-align: center;
+    font-size: 50pt;
+}
+
+.buttonalat{
+    display: flex;
+    justify-self: center;
+}
+
+.minus button{
+    width: 4vw;
+    height: 6vh;
+    padding: 5px;
+    border-radius: 6px;
+    background-color: #ff2121;
+    color: white;
+    text-align: center;
+    margin-left: 10px;
+}
+
+.reset button{
+    width: 7vw;
+    height: 6vh;
+    padding: 5px;
+    border-radius: 6px;
+    background-color: #3a3838;
+    color: white;
+    
+    text-align: center;
+    margin-left: 10px;
+}
+
+.plus button{
+    width: 4vw;
+    height: 6vh;
+    padding: 5px;
+    border-radius: 6px;
+    background-color: #37ff21;
+    color: white;
+    
+    text-align: center;
+    margin-left: 10px;
+}
+
+
+
+
+
+
+
+
+.minus1 button{
+    width: 4vw;
+    height: 6vh;
+    padding: 5px;
+    border-radius: 6px;
+    background-color: #ff2121;
+    color: white;
+    text-align: center;
+    margin-left: 10px;
+}
+    
+.reset1 button{
+   width: 7vw;
+    height: 6vh;
+    padding: 5px;
+    border-radius: 6px;
+    background-color: #3a3838;
+    color: white;
+    
+    text-align: center;
+    margin-left: 10px;
+}
+
+.plus1 button{
+    width: 4vw;
+    height: 6vh;
+    padding: 5px;
+    border-radius: 6px;
+    background-color: #37ff21;
+    color: white;
+    
+    text-align: center;
+    margin-left: 10px;
+}
+
+h3{
+    text-align: center;
+    font-size: 20pt;
+}
+
+
